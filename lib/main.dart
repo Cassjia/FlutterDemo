@@ -1,27 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:first_flutter_app/NewRoute.dart';
-import 'package:first_flutter_app/MyCheck.dart';
-import 'package:english_words/english_words.dart';
-import 'MyTextField.dart';
-import 'MyTransForm.dart';
-import 'ScrollDemo.dart';
-import 'ListViewDemo.dart';
-import 'ListViewSeparatorDemo.dart';
-import 'ListViewDemo2.dart';
-import 'GridViewDemo1.dart';
-import 'GridViewDemo2.dart';
-import 'CustomSollerViewDemo1.dart';
-import 'ScrollerControllerDemo.dart';
-import 'WillPopScopeDemo.dart';
+import 'splash.dart';
 
-void main() => runApp(MyApp());
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: '丁管家',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -32,25 +19,9 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.blue,
       ),
-      routes: {
-        "new_page": (context) => new NewRoute(),
-        'check': (context) => new MyCheck(),
-      },
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class RandomWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    var randomWord = new WordPair.random();
-    // TODO: implement build
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Text(randomWord.toString()),
+      home: MyHomePage(title: '丁管家'),
     );
   }
 }
@@ -76,48 +47,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    print("initState()");
-  }
-
-  @override
-  void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
-    super.didChangeDependencies();
-    print("didChangeDependencies()");
-  }
-
-  @override
-  void deactivate() {
-    // TODO: implement deactivate
-    super.deactivate();
-    print("deactivate()");
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    print("dispose()");
-  }
-
-  @override
-  void reassemble() {
-    // TODO: implement reassemble
-    super.reassemble();
-    print("reassemble()");
-  }
-
-  @override
-  void didUpdateWidget(MyHomePage oldWidget) {
-    // TODO: implement didUpdateWidget
-    super.didUpdateWidget(oldWidget);
-    print("didUpdateWidget()");
-  }
-
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -131,18 +60,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    print("build()");
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Scaffold(
+      return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        centerTitle: true,
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -171,57 +100,6 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
-            FlatButton(
-              child: Text('open new Route'),
-              textColor: Colors.deepPurple,
-              onPressed: () {
-//                Navigator.push(context, new MaterialPageRoute(builder: (context){
-//                  return new NewRoute();
-//                }));
-                Navigator.pushNamed(context, 'new_page');
-              },
-            ),
-            RaisedButton(
-              child: Text('单选复选'),
-              onPressed: () {
-                Navigator.pushNamed(context, 'check');
-              },
-            ),
-            RaisedButton(
-              child: Text('TextField'),
-              onPressed: () {
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (context) {
-                  return new MyTextField();
-                }));
-              },
-            ),
-            RaisedButton(
-              child: const Text('TransForm'),
-              onPressed: () {
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (context) {
-                  return new MyTransForm();
-                }));
-              },
-            ),
-            RaisedButton(
-              child: const Text('ScrollDemo'),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return new ScrollDemo();
-                }));
-              },
-            ),
-            RaisedButton(
-              child: const Text('WillPopScopeDemo'),
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return new WillPopScopeDemo();
-                }));
-              },
-            ),
-            RandomWidget(),
           ],
         ),
       ),
@@ -231,5 +109,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+
   }
 }
