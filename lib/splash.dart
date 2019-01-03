@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'HomePage.dart';
+import 'package:flutter/cupertino.dart';
 
 void main() => runApp(MyApp());
 
@@ -55,7 +56,8 @@ class splashState extends State<splashOne> {
               /*  Navigator.push(context, new MaterialPageRoute(builder: (context) {
                 return new splashTwo();
               }));*/
-              Navigator.push(context, PageRouteBuilder(pageBuilder:
+
+           /*   Navigator.push(context, PageRouteBuilder(pageBuilder:
                   (BuildContext context, Animation animation,
                       Animation secondaryAnimation) {
                 return new FadeTransition(
@@ -63,7 +65,13 @@ class splashState extends State<splashOne> {
                   opacity: animation,
                   child: new splashTwo(), //路由B
                 );
-              }));
+              }));*/
+
+              Navigator.push(context, CupertinoPageRoute(
+                  builder: (context){
+                    return new splashTwo(); //路由B
+                  }
+              ));
             }
           },
           child: Image.asset(
@@ -110,9 +118,15 @@ class splashTwoState extends State<splashTwo> {
               /*   Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(builder: (context) => new HomePage()),
               (Route<dynamic> rout) => false);*/
-              Navigator.push(context, new MaterialPageRoute(builder: (context) {
+             /* Navigator.push(context, new MaterialPageRoute(builder: (context) {
                 return new splashThree();
-              }));
+              }));*/
+
+              Navigator.push(context, CupertinoPageRoute(
+                  builder: (context){
+                    return new splashThree(); //路由B
+                  }
+              ));
             }
           },
           child: Image.asset(
@@ -152,9 +166,16 @@ class splashThreeState extends State<splashThree> {
               /*   Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(builder: (context) => new HomePage()),
               (Route<dynamic> rout) => false);*/
-              Navigator.push(context, new MaterialPageRoute(builder: (context) {
+
+        /*      Navigator.push(context, new MaterialPageRoute(builder: (context) {
                 return new splashFour();
-              }));
+              }));*/
+              Navigator.push(context, CupertinoPageRoute(
+                  builder: (context){
+                    return new splashFour(); //路由B
+                  }
+              ));
+
             }
           },
           child: Image.asset(
@@ -195,9 +216,16 @@ class splashFourState extends State<splashFour> {
               /*   Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(builder: (context) => new HomePage()),
               (Route<dynamic> rout) => false);*/
-              Navigator.push(context, new MaterialPageRoute(builder: (context) {
+
+             /* Navigator.push(context, new MaterialPageRoute(builder: (context) {
                 return new splashFive();
-              }));
+              }));*/
+
+              Navigator.push(context, CupertinoPageRoute(
+                  builder: (context){
+                    return new splashFive(); //路由B
+                  }
+              ));
             }
           },
           child: Image.asset(
@@ -238,9 +266,15 @@ class splashFiveState extends State<splashFive> {
               /*   Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(builder: (context) => new HomePage()),
               (Route<dynamic> rout) => false);*/
-              Navigator.push(context, new MaterialPageRoute(builder: (context) {
+           /*   Navigator.push(context, new MaterialPageRoute(builder: (context) {
                 return new HomePage();
-              }));
+              }));*/
+
+              Navigator.push(context, CupertinoPageRoute(
+                  builder: (context){
+                    return new HomePage(); //路由B
+                  }
+              ));
             }
           },
           child: Image.asset(
